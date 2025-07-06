@@ -8,7 +8,7 @@ def read_from_files(
     datapath="./data/",
     fname_fmt=".csv",
     f_pref="",
-    f_suff="Scores",
+    f_suff="",
 ) -> pd.DataFrame:
     """
     Read in data from csv files generated from ianseo results into a single dataset.
@@ -32,7 +32,7 @@ def read_from_files(
         A pandas dataframe of the combined results read from file
     """
     li_df = []
-    fields = ["Division", "Class", "Score", "10", "9", "Category Rank"]
+    fields = ["Athlete", "Division", "Class", "Score", "11", "10", "Category Rank"]
     for f_id in flist:
         dataset = pd.read_csv(
             f"{datapath}{f_pref}{f_id.replace(' ', '_')}{f_suff}{fname_fmt}",
